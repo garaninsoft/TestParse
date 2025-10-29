@@ -15,7 +15,8 @@ class ReviewsCsvTest {
     @BeforeEach
     fun setup() {
         // На macos перед исп chromeDriver в терминале xattr -d com.apple.quarantine chromeDriverPath
-        System.setProperty("webdriver.chrome.driver", TestConfig.chromeDriverPath)
+        // System.setProperty можно оставить при запуске из IIdea
+        //System.setProperty("webdriver.chrome.driver", TestConfig.chromeDriverPath)
         val options = ChromeOptions()
         if (TestConfig.headless) options.addArguments("--headless=new")
         driver = ChromeDriver(options)
